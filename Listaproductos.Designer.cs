@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.TBNombreproducto = new System.Windows.Forms.TextBox();
+            this.LBproductos = new System.Windows.Forms.ListBox();
             this.BTAgregar = new System.Windows.Forms.Button();
             this.BTBuscarProducto = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TBPrecioProd = new System.Windows.Forms.TextBox();
+            this.TBDescripcionprod = new System.Windows.Forms.TextBox();
+            this.TbConsultarprod = new System.Windows.Forms.TextBox();
             this.BTcompra = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TBcantidad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,29 +56,30 @@
             this.label1.Text = "Lista de productos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // TBNombreproducto
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.TBNombreproducto.Location = new System.Drawing.Point(138, 127);
+            this.TBNombreproducto.Name = "TBNombreproducto";
+            this.TBNombreproducto.Size = new System.Drawing.Size(100, 20);
+            this.TBNombreproducto.TabIndex = 1;
             // 
-            // listBox1
+            // LBproductos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(495, 96);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(279, 316);
-            this.listBox1.TabIndex = 2;
+            this.LBproductos.FormattingEnabled = true;
+            this.LBproductos.Location = new System.Drawing.Point(495, 96);
+            this.LBproductos.Name = "LBproductos";
+            this.LBproductos.Size = new System.Drawing.Size(279, 316);
+            this.LBproductos.TabIndex = 2;
             // 
             // BTAgregar
             // 
-            this.BTAgregar.Location = new System.Drawing.Point(272, 150);
+            this.BTAgregar.Location = new System.Drawing.Point(272, 155);
             this.BTAgregar.Name = "BTAgregar";
             this.BTAgregar.Size = new System.Drawing.Size(75, 23);
             this.BTAgregar.TabIndex = 3;
             this.BTAgregar.Text = "Agregar";
             this.BTAgregar.UseVisualStyleBackColor = true;
+            this.BTAgregar.Click += new System.EventHandler(this.BTAgregar_Click);
             // 
             // BTBuscarProducto
             // 
@@ -86,27 +89,28 @@
             this.BTBuscarProducto.TabIndex = 4;
             this.BTBuscarProducto.Text = "Buscar";
             this.BTBuscarProducto.UseVisualStyleBackColor = true;
+            this.BTBuscarProducto.Click += new System.EventHandler(this.BTBuscarProducto_Click);
             // 
-            // textBox2
+            // TBPrecioProd
             // 
-            this.textBox2.Location = new System.Drawing.Point(138, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.TBPrecioProd.Location = new System.Drawing.Point(138, 179);
+            this.TBPrecioProd.Name = "TBPrecioProd";
+            this.TBPrecioProd.Size = new System.Drawing.Size(100, 20);
+            this.TBPrecioProd.TabIndex = 5;
             // 
-            // textBox3
+            // TBDescripcionprod
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.TBDescripcionprod.Location = new System.Drawing.Point(138, 153);
+            this.TBDescripcionprod.Name = "TBDescripcionprod";
+            this.TBDescripcionprod.Size = new System.Drawing.Size(100, 20);
+            this.TBDescripcionprod.TabIndex = 6;
             // 
-            // textBox4
+            // TbConsultarprod
             // 
-            this.textBox4.Location = new System.Drawing.Point(138, 318);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.TbConsultarprod.Location = new System.Drawing.Point(138, 318);
+            this.TbConsultarprod.Name = "TbConsultarprod";
+            this.TbConsultarprod.Size = new System.Drawing.Size(100, 20);
+            this.TbConsultarprod.TabIndex = 7;
             // 
             // BTcompra
             // 
@@ -164,24 +168,42 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Nombre de producto";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(66, 213);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Cantidad";
+            // 
+            // TBcantidad
+            // 
+            this.TBcantidad.Location = new System.Drawing.Point(138, 210);
+            this.TBcantidad.Name = "TBcantidad";
+            this.TBcantidad.Size = new System.Drawing.Size(100, 20);
+            this.TBcantidad.TabIndex = 15;
+            // 
             // Listaproductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TBcantidad);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BTcompra);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TbConsultarprod);
+            this.Controls.Add(this.TBDescripcionprod);
+            this.Controls.Add(this.TBPrecioProd);
             this.Controls.Add(this.BTBuscarProducto);
             this.Controls.Add(this.BTAgregar);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.LBproductos);
+            this.Controls.Add(this.TBNombreproducto);
             this.Controls.Add(this.label1);
             this.Name = "Listaproductos";
             this.Text = "Listaproductos";
@@ -193,18 +215,20 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox TBNombreproducto;
+        private System.Windows.Forms.ListBox LBproductos;
         private System.Windows.Forms.Button BTAgregar;
         private System.Windows.Forms.Button BTBuscarProducto;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TBPrecioProd;
+        private System.Windows.Forms.TextBox TBDescripcionprod;
+        private System.Windows.Forms.TextBox TbConsultarprod;
         private System.Windows.Forms.Button BTcompra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TBcantidad;
     }
 }
