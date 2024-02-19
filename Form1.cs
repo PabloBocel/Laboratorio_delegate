@@ -21,5 +21,24 @@ namespace Laboratorio_delegate
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTregistro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registro ventanaUsuario = new Registro(); 
+            ventanaUsuario.Show();
+        }
+
+        private void BTiniciosesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InicioDeSesion VentanaIniciodeSesion = new InicioDeSesion();
+            VentanaIniciodeSesion.Show();
+        }
     }
 }
