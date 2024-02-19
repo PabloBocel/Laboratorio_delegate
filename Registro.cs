@@ -39,7 +39,7 @@ namespace Laboratorio_delegate
                 MessageBox.Show("Se registró correctamente");
 
                 this.Hide();
-                Listaproductos V1 = new Listaproductos();
+                Form1 V1 = new Form1();
                 V1.Show();
             }
             catch (Exception x)
@@ -52,7 +52,7 @@ namespace Laboratorio_delegate
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Listaproductos V1 = new Listaproductos();
+            Form1 V1 = new Form1();
             V1.Show();
         }
 

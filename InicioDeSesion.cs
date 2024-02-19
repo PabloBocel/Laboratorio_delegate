@@ -58,7 +58,7 @@ namespace Laboratorio_delegate
         private void BTregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Listaproductos V1 = new Listaproductos(); 
+            Form1 V1 = new Form1(); 
             V1.Show();
         }
     }
