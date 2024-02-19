@@ -101,5 +101,107 @@ namespace Laboratorio_delegate
                 MessageBox.Show("Hubo un error: " + ex.Message, "Error");
             }
         }
+
+        private void BTCompras_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombreProducto = TBCompras.Text;
+                int cantidadComprar = int.Parse(TBCompraNum.Text); 
+
+                Producto productoEncontrado = listaProductos.Find(p => p.Nombre == nombreProducto);
+
+                if (productoEncontrado != null)
+                {
+                    if (productoEncontrado.Cantidad >= cantidadComprar)
+                    {
+                        productoEncontrado.Cantidad += cantidadComprar;
+                    }
+
+                    if (productoEncontrado.Cantidad < 0)
+                    {
+                        productoEncontrado.Cantidad = 0;
+                    }
+
+                    MessageBox.Show($"Se agregaron {cantidadComprar} unidades al producto '{nombreProducto}'.",
+                                    "Compra Exitosa");
+
+                    ActualizarListBoxProductos();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún producto con ese nombre.", "Producto no encontrado");
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ingrese un número válido para la cantidad.", "Error de formato");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error: " + ex.Message, "Error");
+            }
+        }
+        private void ActualizarListBoxProductos()
+        {
+            LBproductos.Items.Clear();
+
+            foreach (Producto producto in listaProductos)
+            {
+                LBproductos.Items.Add(producto.Nombre);
+
+                if (producto.Cantidad == 2)
+                {
+                    MessageBox.Show($"¡Atención! La cantidad de {producto.Nombre} está llegando a un nivel crítico.", "Nivel Crítico");
+                }
+            }
+        }
+
+        private void BTVentas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombreProducto = TBVentas.Text;
+                int cantidadVender = int.Parse(TBVentaNum.Text);
+
+                Producto productoEncontrado = listaProductos.Find(p => p.Nombre == nombreProducto);
+
+                if (productoEncontrado != null)
+                {
+                    if (productoEncontrado.Cantidad >= cantidadVender)
+                    {
+                        productoEncontrado.Cantidad -= cantidadVender;
+                    }
+
+                    if (productoEncontrado.Cantidad < 0)
+                    {
+                        productoEncontrado.Cantidad = 0;
+                    }
+
+                    MessageBox.Show($"Se vendieron {cantidadVender} unidades al producto '{nombreProducto}'.",
+                                    "venta Exitosa");
+
+                    ActualizarListBoxProductos();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún producto con ese nombre.", "Producto no encontrado");
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ingrese un número válido para la cantidad.", "Error de formato");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error: " + ex.Message, "Error");
+            }
+        }
+
+        private void BTSalir_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Gracias por visitar la tienda.", "Despedida");
+            Application.Exit();
+        }
     }
 }
