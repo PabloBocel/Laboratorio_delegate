@@ -39,7 +39,7 @@ namespace Laboratorio_delegate
                 MessageBox.Show("Se registró correctamente");
 
                 this.Hide();
-                Form1 V1 = new Form1(); // cambiar a la pantalla principal 
+                Listaproductos V1 = new Listaproductos();
                 V1.Show();
             }
             catch (Exception x)
@@ -52,7 +52,7 @@ namespace Laboratorio_delegate
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 V1 = new Form1(); // cambiar a la panatalla principal 
+            Listaproductos V1 = new Listaproductos();
             V1.Show();
         }
 

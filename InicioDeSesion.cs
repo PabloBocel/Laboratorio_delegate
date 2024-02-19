@@ -34,7 +34,7 @@ namespace Laboratorio_delegate
                     MessageBox.Show("Se inició sesión correctamente");
 
                     this.Hide();
-                    Form1 V1 = new Form1(); // cambiar a la pantalla principal
+                    Listaproductos V1 = new Listaproductos();
                     V1.Show();
                 }
                 else
@@ -58,7 +58,7 @@ namespace Laboratorio_delegate
         private void BTregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 V1 = new Form1(); // cambiar a la panatalla principal 
+            Listaproductos V1 = new Listaproductos(); 
             V1.Show();
         }
     }
