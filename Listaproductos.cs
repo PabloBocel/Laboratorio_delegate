@@ -62,7 +62,7 @@ namespace Laboratorio_delegate
 
                 listaProductos.Add(nuevoProducto);
 
-                LBproductos.Items.Add(nombreProducto);
+                LBproductos.Items.Add($"{nombreProducto} - Cantidad: {cantidadProducto}");
 
                 TBNombreproducto.Clear();
                 TBDescripcionprod.Clear();
@@ -148,7 +148,7 @@ namespace Laboratorio_delegate
 
             foreach (Producto producto in listaProductos)
             {
-                LBproductos.Items.Add(producto.Nombre);
+                LBproductos.Items.Add($"{producto.Nombre} - Cantidad: {producto.Cantidad}");
 
                 if (producto.Cantidad == 2)
                 {
