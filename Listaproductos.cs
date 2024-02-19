@@ -150,7 +150,7 @@ namespace Laboratorio_delegate
             {
                 LBproductos.Items.Add($"{producto.Nombre} - Cantidad: {producto.Cantidad}");
 
-                if (producto.Cantidad == 2)
+                if (producto.Cantidad <= 2)
                 {
                     MessageBox.Show($"¡Atención! La cantidad de {producto.Nombre} está llegando a un nivel crítico.", "Nivel Crítico");
                 }
