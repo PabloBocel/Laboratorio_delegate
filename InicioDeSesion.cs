@@ -24,10 +24,18 @@ namespace Laboratorio_delegate
             try
             {
                 TextReader Inicio = new StreamReader(TBnombre.Text + ".txt");
+                string[] usuarioInfo = Inicio.ReadLine().Split(',');
 
-                if (Inicio.ReadLine() == TBpass.Text)
+                string correoGuardado = usuarioInfo[0];
+                string contrasenaGuardada = usuarioInfo[1];
+
+                if (correoGuardado == TBCorreo.Text && contrasenaGuardada == TBpass.Text)
                 {
-                    MessageBox.Show("Se inicio sesion");
+                    MessageBox.Show("Se inició sesión correctamente");
+
+                    this.Hide();
+                    Form1 V1 = new Form1(); // cambiar a la pantalla principal
+                    V1.Show();
                 }
                 else
                 {
@@ -44,12 +52,13 @@ namespace Laboratorio_delegate
         {
             TBnombre.Clear();
             TBpass.Clear();
+            TBCorreo.Clear();
         }
 
         private void BTregresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 V1 = new Form1();
+            Form1 V1 = new Form1(); // cambiar a la panatalla principal 
             V1.Show();
         }
     }

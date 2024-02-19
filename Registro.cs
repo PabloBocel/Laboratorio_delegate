@@ -24,6 +24,7 @@ namespace Laboratorio_delegate
         {
             TBnombre.Clear();
             TBpass.Clear();
+            TBCorreo.Clear();
         }
 
         private void Registrar_Click(object sender, EventArgs e)
@@ -31,13 +32,14 @@ namespace Laboratorio_delegate
             try
             {
                 TextWriter RegistrarUsuario = new StreamWriter(@"D:\Universidad\Tercer ciclo\Estructura de datos I\Lab\Proyectos\Laboratorio_delegate\bin\Debug\" + TBnombre.Text + ".txt", true);
-                RegistrarUsuario.WriteLine(TBpass.Text);
+                RegistrarUsuario.WriteLine(TBCorreo.Text + "," + TBpass.Text);
+
                 RegistrarUsuario.Close();
 
-                MessageBox.Show("se regirstro correctamente");
+                MessageBox.Show("Se registró correctamente");
 
                 this.Hide();
-                Form1 V1 = new Form1();
+                Form1 V1 = new Form1(); // cambiar a la pantalla principal 
                 V1.Show();
             }
             catch (Exception x)
@@ -50,8 +52,18 @@ namespace Laboratorio_delegate
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 V1 = new Form1();
+            Form1 V1 = new Form1(); // cambiar a la panatalla principal 
             V1.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

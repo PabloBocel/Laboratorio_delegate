@@ -35,6 +35,8 @@
             this.Registrar = new System.Windows.Forms.Button();
             this.BTLimpiar = new System.Windows.Forms.Button();
             this.BTregresar = new System.Windows.Forms.Button();
+            this.TBCorreo = new System.Windows.Forms.TextBox();
+            this.BTCorreo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BTnombre
@@ -51,7 +53,7 @@
             // 
             this.BTpassword.AutoSize = true;
             this.BTpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTpassword.Location = new System.Drawing.Point(140, 127);
+            this.BTpassword.Location = new System.Drawing.Point(140, 174);
             this.BTpassword.Name = "BTpassword";
             this.BTpassword.Size = new System.Drawing.Size(92, 20);
             this.BTpassword.TabIndex = 1;
@@ -62,15 +64,15 @@
             this.TBnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnombre.Location = new System.Drawing.Point(238, 84);
             this.TBnombre.Name = "TBnombre";
-            this.TBnombre.Size = new System.Drawing.Size(134, 26);
+            this.TBnombre.Size = new System.Drawing.Size(300, 26);
             this.TBnombre.TabIndex = 2;
             // 
             // TBpass
             // 
             this.TBpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBpass.Location = new System.Drawing.Point(238, 127);
+            this.TBpass.Location = new System.Drawing.Point(238, 174);
             this.TBpass.Name = "TBpass";
-            this.TBpass.Size = new System.Drawing.Size(134, 26);
+            this.TBpass.Size = new System.Drawing.Size(300, 26);
             this.TBpass.TabIndex = 3;
             // 
             // Registrar
@@ -103,11 +105,33 @@
             this.BTregresar.UseVisualStyleBackColor = true;
             this.BTregresar.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // TBCorreo
+            // 
+            this.TBCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCorreo.Location = new System.Drawing.Point(238, 129);
+            this.TBCorreo.Name = "TBCorreo";
+            this.TBCorreo.Size = new System.Drawing.Size(300, 26);
+            this.TBCorreo.TabIndex = 8;
+            this.TBCorreo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // BTCorreo
+            // 
+            this.BTCorreo.AutoSize = true;
+            this.BTCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTCorreo.Location = new System.Drawing.Point(154, 132);
+            this.BTCorreo.Name = "BTCorreo";
+            this.BTCorreo.Size = new System.Drawing.Size(57, 20);
+            this.BTCorreo.TabIndex = 7;
+            this.BTCorreo.Text = "Correo";
+            this.BTCorreo.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TBCorreo);
+            this.Controls.Add(this.BTCorreo);
             this.Controls.Add(this.BTregresar);
             this.Controls.Add(this.BTLimpiar);
             this.Controls.Add(this.Registrar);
@@ -131,5 +155,7 @@
         private System.Windows.Forms.Button Registrar;
         private System.Windows.Forms.Button BTLimpiar;
         private System.Windows.Forms.Button BTregresar;
+        private System.Windows.Forms.TextBox TBCorreo;
+        private System.Windows.Forms.Label BTCorreo;
     }
 }
