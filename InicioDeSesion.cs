@@ -14,6 +14,24 @@ namespace Laboratorio_delegate
 {
     public partial class InicioDeSesion : Form
     {
+        
+        public class Usuario
+        {
+            public string Correo { get; set; }
+            public string Contraseña { get; set; }
+
+            public Usuario(string correo, string contraseña)
+            {
+                Correo = correo;
+                Contraseña = contraseña;
+            }
+        }
+
+        private List<Usuario> usuarios = new List<Usuario>
+        {
+            new Usuario("pablo1@gmail.com", "1234"),
+            new Usuario("gabriela1@gmail.com", "1234"),
+        };
         public InicioDeSesion()
         {
             InitializeComponent();
@@ -23,6 +41,24 @@ namespace Laboratorio_delegate
         {
             try
             {
+
+                string correoIngresado = TBCorreo.Text;
+                string contraseñaIngresada = TBpass.Text;
+                Usuario usuario = usuarios.FirstOrDefault(u => u.Correo == correoIngresado && u.Contraseña == contraseñaIngresada);
+
+                if (usuario != null)
+                {
+                    MessageBox.Show("Se inició sesión correctamente");
+
+                    this.Hide();
+                    Listaproductos V1 = new Listaproductos();
+                    V1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo iniciar sesión. Verifique su correo y contraseña.", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 TextReader Inicio = new StreamReader(TBnombre.Text + ".txt");
                 string[] usuarioInfo = Inicio.ReadLine().Split(',');
 
